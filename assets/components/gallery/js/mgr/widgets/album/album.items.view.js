@@ -178,7 +178,7 @@ Ext.extend(GAL.view.AlbumItems,MODx.DataView,{
                     ,'<div class="gal-item-thumb">'
                         ,'<img src="{thumbnail}" title="{name}" />'
                     ,'</div>'
-                    ,'<span>{shortName}</span>'              
+                    ,'<span>{shortName}&nbsp;</span>'              
                 ,'</div>'
             ,'</tpl>'
         );
