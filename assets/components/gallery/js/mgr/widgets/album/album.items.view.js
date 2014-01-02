@@ -10,6 +10,7 @@ GAL.view.AlbumItems = function(config) {
         ,baseParams: {
             action: 'mgr/item/getList'
             ,album: config.album
+            ,limit: config.pageSize || (parseInt(MODx.config.default_per_page) || 20)
         }
         ,loadingText: _('loading')
         ,tpl: this.templates.thumb
