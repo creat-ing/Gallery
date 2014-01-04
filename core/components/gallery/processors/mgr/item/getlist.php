@@ -29,7 +29,7 @@ $isLimit = !empty($scriptProperties['limit']);
 $start = $modx->getOption('start',$scriptProperties,0);
 $limit = $modx->getOption('limit',$scriptProperties,24);
 $sort = $modx->getOption('sort',$scriptProperties,'name');
-$dir = $modx->getOption('dir',$scriptProperties,'ASC');
+$dir = $modx->getOption('dir',$scriptProperties,'DESC');
 $album = $modx->getOption('album',$scriptProperties,false);
 
 if (empty($album)) return $this->outputArray(array(),0);
