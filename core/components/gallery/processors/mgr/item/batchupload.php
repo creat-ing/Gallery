@@ -117,8 +117,13 @@ foreach (new DirectoryIterator($fullpath) as $file) {
         $item->save();
     }
 
-    /* get count of items in album */
-    $total = $modx->getCount('galAlbumItem',array('album' => $_POST['album']));
+     /* get rank of last item, add 1 */
+        $c = $modx->newQuery('galAlbumItem');
+        $c->where(array('album' => $album));
+        $c->sortby('rank','DESC');
+        $c->limit(1);
+        $maxRankItem = $modx->getObject('galAlbumItem',$c);
+        $total = $maxRankItem->get('rank')+1;
 
     /* associate with album */
     $albumItem = $modx->newObject('galAlbumItem');
