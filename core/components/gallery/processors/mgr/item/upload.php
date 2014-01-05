@@ -61,11 +61,11 @@ if (!$item->upload($_FILES['file'],$scriptProperties['album'])) {
 $item->save();
 
 /* get rank of last item, add 1 */
-$c = $this->modx->newQuery('galAlbumItem');
+$c = $modx->newQuery('galAlbumItem');
 $c->where(array('album' => $album));
 $c->sortby('rank','DESC');
 $c->limit(1);
-$maxRankItem = $this->modx->getObject('galAlbumItem',$c);
+$maxRankItem = $modx->getObject('galAlbumItem',$c);
 $total = $maxRankItem->get('rank')+1;
 
 /* associate with album */
